@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap 注册</title>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/dist/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-validation/src/localization/messages_zh.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <style type="text/css">
+        .wrapper {
+            width: 200px;
+            margin: 30px auto;
+        }
+
+        /* 验证失败的样式*/
+        .error {
+            color: red
+        }
+
+        /* 验证成功的样式*/
+        .valid {
+            color: green
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h2>注册</h2>
+    <form action="go" method="get" enctype="application/x-www-form-urlencoded" id="signUpForm">
+        <label id="sure" class="error" style="display:none">请纠正以下错误后再提交 :</label>
+        <div id="msg"></div>
+        <div class="form-group">
+            <label for="">用户名：</label>
+            <input type="text" class="form-control required" name="username"/>
+        </div>
+        <div class="form-group">
+            <label for="">密 码：</label>
+            <input type="password" class="form-control" name="password" id="password"/>
+        </div>
+        <div class="form-group">
+            <label for="">确认密码：</label>
+            <input type="password" class="form-control" name="password2" id="password2"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary center-block">注册</button>
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+</html>
