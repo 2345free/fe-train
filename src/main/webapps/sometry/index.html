@@ -36,16 +36,19 @@
         <label id="sure" class="error" style="display:none">请纠正以下错误后再提交 :</label>
         <div id="msg"></div>
         <div class="form-group">
-            <label for="username">用户名：</label>
-            <input type="text" class="form-control required" name="username" id="username"/>
+            <label for="username" class="sr-only">用户名：</label>
+            <input type="text" class="form-control required" name="username" id="username"
+                   placeholder="用户名"/>
         </div>
         <div class="form-group">
-            <label for="password">密 码：</label>
-            <input type="password" class="form-control" name="password" id="password"/>
+            <label for="password" class="sr-only">密 码：</label>
+            <input type="password" class="form-control" name="password" id="password"
+                   placeholder="密 码"/>
         </div>
         <div class="form-group">
-            <label for="password2">确认密码：</label>
-            <input type="password" class="form-control" name="password2" id="password2"/>
+            <label for="password2" class="sr-only">确认密码：</label>
+            <input type="password" class="form-control" name="password2" id="password2"
+                   placeholder="确认密码"/>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block">注册</button>
     </form>
