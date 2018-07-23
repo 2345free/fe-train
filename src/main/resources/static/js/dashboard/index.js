@@ -35,12 +35,14 @@ $(function () {
         detailView: false,               //是否显示父子表
         checkboxHeader: true,            // 设置 false 将在列头隐藏全选复选框
         // 导出 (Use Plugin: tableExport.jquery.plugin)
-        showExport: true, // to show export button in toolbar
-        exportDataType: 'selected', // support: 'basic', 'all', 'selected'
+        showExport: true,                // to show export button in toolbar
+        exportDataType: 'selected',      // support: 'basic', 'all', 'selected'
         exportTypes: ['json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'], //  support types: 'json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'
         exportOptions: {
             fileName: 'indexTableExport'
         },
+        // 表格编辑
+        editable: true,                  // 表格编辑总开关,默认true
         columns: [
             {
                 field: 'state',
@@ -57,7 +59,8 @@ $(function () {
                 title: 'Item Name'
             }, {
                 field: 'price',
-                title: 'Item Price'
+                title: 'Item Price',
+                editable: true // 开启这一列可编辑
             }],
         data: [{
             state: true,
