@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.2.1</version>
+            <version>1.11.0</version>
         </dependency>
 
         <dependency>
@@ -83,8 +83,8 @@
             <version>3.3.7</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.webjars.bower</groupId>
                     <artifactId>jquery</artifactId>
+                    <groupId>org.webjars.bower</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
