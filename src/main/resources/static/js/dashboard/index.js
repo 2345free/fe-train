@@ -37,7 +37,10 @@ $(function () {
         // 导出 (Use Plugin: tableExport.jquery.plugin)
         showExport: true, // to show export button in toolbar
         exportDataType: 'selected', // support: 'basic', 'all', 'selected'
-        exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel'], //  support types: 'json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'
+        exportTypes: ['json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'], //  support types: 'json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'
+        exportOptions: {
+            fileName: 'indexTableExport'
+        },
         columns: [
             {
                 field: 'state',

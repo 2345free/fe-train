@@ -88,7 +88,15 @@
 <script type="text/javascript" src="/js/lib/bootstrap-table/bootstrap-table.min.js"></script>
 <!-- 表格导出插件 -->
 <script type="text/javascript" src="/js/lib/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
-<script type="text/javascript" src="/js/lib/tableExport/tableExport.min.js"></script>
+<script type="text/javascript" src="/js/lib/tableExport/libs/FileSaver/FileSaver.min.js"></script>
+<!-- 支持xlsx格式导出(目前测试发现问题只有 IE 11上正常导出此格式 @2018-07-23 18:54) -->
+<script type="text/javascript" src="/js/lib/tableExport/libs/js-xlsx/xlsx.core.min.js"></script>
+<!-- 支持pdf格式导出 -->
+<script type="text/javascript" src="/js/lib/tableExport/libs/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" src="/js/lib/tableExport/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<!-- 支持png格式导出 -->
+<script type="text/javascript" src="/js/lib/tableExport/libs/html2canvas/html2canvas.min.js"></script>
+<script type="text/javascript" src="/js/lib/tableExport/tableExport.js"></script>
 
 <!-- 表格编辑插件 -->
 <script type="text/javascript"
