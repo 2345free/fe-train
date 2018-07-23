@@ -48,7 +48,7 @@
 
         <!-- webjars -->
         <dependency>
-            <groupId>org.webjars.bower</groupId>
+            <groupId>org.webjars</groupId>
             <artifactId>respond</artifactId>
             <version>1.4.2</version>
         </dependency>
@@ -60,33 +60,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.webjars.bower</groupId>
+            <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>1.11.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>jquery-validation</artifactId>
-            <version>1.16.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.webjars.bower</groupId>
-                    <artifactId>jquery</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.7</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jquery</artifactId>
-                    <groupId>org.webjars.bower</groupId>
-                </exclusion>
-            </exclusions>
+            <version>1.12.4</version>
         </dependency>
 
         <dependency>
