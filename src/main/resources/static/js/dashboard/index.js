@@ -1,6 +1,17 @@
 $(function () {
     $('#table').bootstrapTable({
         toolbar: '#toolbar',             //工具按钮用哪个容器
+        iconsPrefix: 'glyphicon',
+        icons: {
+            "paginationSwitchDown": "glyphicon-collapse-down icon-chevron-down",
+            "paginationSwitchUp": "glyphicon-collapse-up icon-chevron-up",
+            "refresh": "glyphicon-refresh icon-refresh",
+            "toggle": "glyphicon-list-alt icon-list-alt",
+            "columns": "glyphicon-th icon-th",
+            "detailOpen": "glyphicon-plus icon-plus",
+            "detailClose": "glyphicon-minus icon-minus",
+            "export": "glyphicon-export icon-share"
+        },
         striped: true,                   //是否显示行间隔色
         cache: false,                    //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
         pagination: true,                //是否显示分页（*）
@@ -10,6 +21,7 @@ $(function () {
         pageNumber: 1,                   //初始化加载第一页，默认第一页,并记录
         pageSize: 5,                     //每页的记录行数（*）
         pageList: [5, 10, 25, 50, 100],  //可供选择的每页的行数（*）
+        showPaginationSwitch: true,
         search: false,                   //是否显示表格搜索
         strictSearch: true,
         showColumns: true,               //是否显示所有的列（选择显示的列）
@@ -22,6 +34,10 @@ $(function () {
         cardView: false,                 //是否显示详细视图
         detailView: false,               //是否显示父子表
         checkboxHeader: true,            // 设置 false 将在列头隐藏全选复选框
+        // 导出 (Use Plugin: tableExport.jquery.plugin)
+        showExport: true, // to show export button in toolbar
+        exportDataType: 'selected', // support: 'basic', 'all', 'selected'
+        exportTypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel'], //  support types: 'json', 'xml', 'png', 'csv', 'txt', 'sql', 'doc', 'excel', 'xlsx', 'pdf'
         columns: [
             {
                 field: 'state',
