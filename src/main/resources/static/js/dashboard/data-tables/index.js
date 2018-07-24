@@ -13,7 +13,7 @@ $(function () {
         "autoWidth": true,
         "language": {
             // 这里很重要，如果你的"加载中"是文字，则直接写上文字即可，如果是gif的图片，使用img标签就可以加载
-            // "processing": "<img src='/lib/dataTables/media/images/loading.gif'>",
+            // "processing": "<img src='/images/loading.gif'>",
             "processing": '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>',
             "lengthMenu": "显示 _MENU_ 项结果",
             "zeroRecords": "没有匹配结果",
