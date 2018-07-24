@@ -9,12 +9,15 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="/js/lib/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/js/lib/dataTables/media/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="/js/lib/dataTables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/lib/dataTables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/lib/dataTables/media/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/dataTables/extensions/buttons/css/buttons.dataTables.min.css">
+    <!-- buttons.dataTables导出功能用到的图标库 -->
+    <link rel="stylesheet" href="/lib/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
@@ -38,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">后台管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -84,10 +87,15 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/js/lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/lib/dataTables/media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/js/lib/dataTables/media/js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/lib/dataTables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/lib/dataTables/media/js/dataTables.bootstrap.min.js"></script>
 <!-- 表格导出插件 -->
+<script type="text/javascript" src="/lib/dataTables/extensions/buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="/lib/JSZip-2.5.0/jszip.min.js"></script>
+<script type="text/javascript" src="/lib/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="/lib/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="/lib/dataTables/extensions/buttons/js/buttons.html5.min.js"></script>
 
 <script type="text/javascript" src="/js/dashboard/data-tables/index.js"></script>
 </body>

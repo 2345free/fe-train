@@ -13,7 +13,7 @@ $(function () {
         "autoWidth": true,
         "language": {
             // 这里很重要，如果你的"加载中"是文字，则直接写上文字即可，如果是gif的图片，使用img标签就可以加载
-            "processing": "<img src='/js/lib/dataTables/media/images/loading.gif'>",
+            "processing": "<img src='/lib/dataTables/media/images/loading.gif'>",
             "lengthMenu": "显示 _MENU_ 项结果",
             "zeroRecords": "没有匹配结果",
             "info": "显示第 _START_ 至 _END_ 项结果,共 _TOTAL_ 项",
@@ -34,6 +34,33 @@ $(function () {
             }
 
         },
+        // 文件导出
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                text: '<i class="fa fa-files-o"></i>',
+                titleAttr: '复制表格内容'
+            },
+            {
+                extend: 'excelHtml5',
+                text: '<i class="fa fa-file-excel-o"></i>',
+                titleAttr: '导出Excel',
+                title: 'dataTablesExport' // 导出的文件名
+            },
+            {
+                extend: 'csvHtml5',
+                text: '<i class="fa fa-file-text-o"></i>',
+                titleAttr: '导出CSV',
+                title: 'dataTablesExport'
+            },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="fa fa-file-pdf-o"></i>',
+                titleAttr: '导出PDF',
+                title: 'dataTablesExport'
+            }
+        ],
         "ajax": {
             "url": "/data.json",
             // "contentType": "application/json",
