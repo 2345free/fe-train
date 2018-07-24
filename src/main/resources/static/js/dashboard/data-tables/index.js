@@ -75,14 +75,25 @@ $(function () {
             },
             {
                 extend: 'print',
+                autoPrint: false,
                 text: '<i class="fa fa-print"></i>',
                 titleAttr: '打印',
                 exportOptions: {
-                    columns: ':visible' // 仅操作可见列
+                    columns: ':visible', // 仅操作可见列
+                    modifier: {
+                        selected: null // 打印所有可见的行
+                    }
                 }
             },
             {
                 extend: 'colvis', // 选择显示列按钮
+                columnText: function (dt, idx, title) {
+                    return (idx + 1) + ': ' + title;
+                },
+                postfixButtons: [{
+                    extend: 'colvisRestore',
+                    text: '重置'
+                }],
                 text: '<i class="fa fa-list"></i>',
                 titleAttr: '隐藏/显示列'
             }
