@@ -75,14 +75,11 @@ $(function () {
             },
             {
                 extend: 'print',
-                autoPrint: false,
+                autoPrint: true, // 自动弹出打印预览
                 text: '<i class="fa fa-print"></i>',
                 titleAttr: '打印',
                 exportOptions: {
                     columns: ':visible', // 仅操作可见列
-                    modifier: {
-                        selected: null // 打印所有可见的行
-                    }
                 }
             },
             {
