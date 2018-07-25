@@ -1,6 +1,6 @@
 $(function () {
 
-    var $dataTable = $('#table').DataTable({
+    $('#table').DataTable({
         processing: true, // 必须加上这个才能显示加载中的效果
         serverSide: false,
         stateSave: true,
@@ -47,52 +47,12 @@ $(function () {
                 }
             }
         },
-        // 文件导出(独立到外部了)
-        select: true,
-        ajax: {
-            url: "/data.json",
-            // "contentType: "application/json",
-            type: "GET",
-            dataSrc: "data",
-            data: function (param) {
-                param.timestamp = new Date().getTime();
-                // return JSON.stringify(param); // post请求
-            }
-        },
-        //使用对象数组，一定要配置columns，告诉 DataTables 每列对应的属性
-        //data 这里是固定不变的，name，position，salary，office 为你数据里对应的属性
-        columns: [
-            {
-                data: 'name',
-                title: '姓名',
-                defaultContent: ''
-            },
-            {
-                data: 'position',
-                title: '职位',
-                defaultContent: ''
-            },
-            {
-                data: 'salary',
-                title: '工资',
-                render: function (data, type, full, meta) {
-                    return data || '';
-                }
-            },
-            {
-                data: 'office',
-                title: '办公地点',
-                defaultContent: ''
-            }
-        ]
-    });
-
-    // 文件导出
-    new $.fn.dataTable.Buttons($dataTable, {
+        // 文件导出
+        dom: 'Bfrtip',
         buttons: [
-            // {
-            //     extend: 'pageLength' // 选择每页条数按钮
-            // },
+            {
+                extend: 'pageLength' // 选择每页条数按钮
+            },
             {
                 extend: 'copyHtml5',
                 text: '<i class="fa fa-files-o"></i>',
@@ -149,11 +109,44 @@ $(function () {
                 text: '<i class="fa fa-list"></i>',
                 titleAttr: '隐藏/显示列'
             }
+        ],
+        select: true,
+        ajax: {
+            url: "/data.json",
+            // "contentType: "application/json",
+            type: "GET",
+            dataSrc: "data",
+            data: function (param) {
+                param.timestamp = new Date().getTime();
+                // return JSON.stringify(param); // post请求
+            }
+        },
+        //使用对象数组，一定要配置columns，告诉 DataTables 每列对应的属性
+        //data 这里是固定不变的，name，position，salary，office 为你数据里对应的属性
+        columns: [
+            {
+                data: 'name',
+                title: '姓名',
+                defaultContent: ''
+            },
+            {
+                data: 'position',
+                title: '职位',
+                defaultContent: ''
+            },
+            {
+                data: 'salary',
+                title: '工资',
+                render: function (data, type, full, meta) {
+                    return data || '';
+                }
+            },
+            {
+                data: 'office',
+                title: '办公地点',
+                defaultContent: ''
+            }
         ]
     });
-
-    $dataTable.buttons(0, null).container().prependTo(
-        $dataTable.table().container()
-    );
 
 });
