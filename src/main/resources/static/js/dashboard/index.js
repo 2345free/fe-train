@@ -62,13 +62,29 @@ $(function () {
                 title: 'Item Price',
                 editable: true // 开启这一列可编辑
             }],
-        ajax: function (result) {
+        queryParams: function (params) {
+            return {
+                limit: params.limit,
+                offset: params.offset,
+                search: params.search,
+                sort: params.sort,
+                order: params.order,
+                pageSize: params.pageSize,
+                pageNum: params.pageNumber,
+                searchText: params.searchText,
+                sortName: params.sortName,
+                sortOrder: params.sortOrder,
+                ext: $('input#ext').val()
+            };
+        },
+        ajax: function (request) {
+            console.dir(request);
             $.ajax({
                 type: "GET",
                 url: "/bootstrap-tables-data.json",
                 contentType: "application/json;charset=utf-8",
                 dataType: "json",
-                data: {},
+                data: request.data,
                 success: function (data, status, xhr) {
 
                     // 获取相关Http Response header
@@ -96,7 +112,7 @@ $(function () {
                     console.dir(responseHeaders);
 
                     // 通过bootstrapTable的result对象把服务器响应的结果交给表格插件
-                    result.success({
+                    request.success({
                         row: data
                     });
                     // 重新绘制表格
