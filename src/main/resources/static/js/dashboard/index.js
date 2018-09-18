@@ -62,45 +62,60 @@ $(function () {
                 title: 'Item Price',
                 editable: true // 开启这一列可编辑
             }],
-        data: [{
-            state: true,
-            id: 1,
-            name: 'Item 1',
-            price: '$1'
-        }, {
-            state: false,
-            id: 2,
-            name: 'Item 2',
-            price: '$2'
-        }, {
-            state: false,
-            id: 3,
-            name: 'Item 2',
-            price: '$2'
-        }, {
-            state: false,
-            id: 4,
-            name: 'Item 2',
-            price: '$2'
-        }, {
-            state: false,
-            id: 5,
-            name: 'Item 2',
-            price: '$2'
-        }, {
-            state: false,
-            id: 6,
-            name: 'Item 2',
-            price: '$2'
-        }],
+        ajax: function (request) {
+            $.ajax({
+                type: "GET",
+                url: "/bootstrap-tables-data.json",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                data: {},
+                success: function (data, status, xhr) {
+
+                    // 获取相关Http Response header
+                    var responseHeaders = {
+                        // 服务器端时间
+                        "date": xhr.getResponseHeader('Date'),
+                        // 如果开启了gzip，会返回这个东西
+                        "contentEncoding": xhr.getResponseHeader('Content-Encoding'),
+                        // keep-alive ？ close？
+                        "connection": xhr.getResponseHeader('Connection'),
+                        // 响应长度
+                        "contentLength": xhr.getResponseHeader('Content-Length'),
+                        // 服务器类型，apache？lighttpd？
+                        "server": xhr.getResponseHeader('Server'),
+                        "vary": xhr.getResponseHeader('Vary'),
+                        "transferEncoding": xhr.getResponseHeader('Transfer-Encoding'),
+                        // text/html ? text/xml?
+                        "contentType": xhr.getResponseHeader('Content-Type'),
+                        "cacheControl": xhr.getResponseHeader('Cache-Control'),
+                        // 生命周期？
+                        "exprires": xhr.getResponseHeader('Exprires'),
+                        "lastModified": xhr.getResponseHeader('Last-Modified')
+                    };
+
+                    console.dir(responseHeaders);
+                    
+                    // 通过bootstrapTable的request对象把服务器响应的结果交给表格插件
+                    request.success({
+                        row: data
+                    });
+                    // 重新绘制表格
+                    $('#table').bootstrapTable('load', data);
+                },
+                error: onLoadError
+            });
+        },
         onLoadSuccess: function () {
             console.log("load success");
         },
-        onLoadError: function () {
-            alert("数据加载失败！");
-        },
+        onLoadError: onLoadError,
         onDblClickRow: function (row, $element) {
             alert(JSON.stringify(row, null, "\t"));
         }
     });
+
+    function onLoadError() {
+        alert("数据加载失败！");
+    }
+
 });
