@@ -62,7 +62,7 @@ $(function () {
                 title: 'Item Price',
                 editable: true // 开启这一列可编辑
             }],
-        ajax: function (request) {
+        ajax: function (result) {
             $.ajax({
                 type: "GET",
                 url: "/bootstrap-tables-data.json",
@@ -94,9 +94,9 @@ $(function () {
                     };
 
                     console.dir(responseHeaders);
-                    
-                    // 通过bootstrapTable的request对象把服务器响应的结果交给表格插件
-                    request.success({
+
+                    // 通过bootstrapTable的result对象把服务器响应的结果交给表格插件
+                    result.success({
                         row: data
                     });
                     // 重新绘制表格
